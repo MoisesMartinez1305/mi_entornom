@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Agregar Alumno{% endblock %}
+{% block title %}Agregar Estudiante{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -8,7 +8,7 @@
         <div class="col-md-6">
             <div class="card shadow">
                 <div class="card-header bg-primary text-white">
-                    <h3 class="card-title text-center">Agregar Alumno</h3>
+                    <h3 class="card-title text-center">Agregar Estudiante</h3>
                 </div>
                 <div class="card-body">
                     <form action="{{ url_for('create_alumno') }}" method="POST">
