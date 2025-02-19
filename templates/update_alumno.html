@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Actualizar Alumno{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title text-center">Actualizar Alumno</h3>
+                </div>
+                <div class="card-body">
+                    <form action="{{ url_for('update_alumno',no_control = alumno.no_control) }}" method="POST">
+                        
+                        <div class="form-group mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="{{alumno.nombre}}" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="ap_paterno" class="form-label">Apellido Paterno</label>
+                            <input type="text" class="form-control" id="ap_paterno" name="ap_paterno" value="{{alumno.ap_paterno}}"required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="ap_materno" class="form-label">Apellido Materno</label>
+                            <input type="text" class="form-control" id="ap_materno" name="ap_materno" value="{{alumno.ap_materno}}"required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="semestre" class="form-label">Semestre</label>
+                            <input type="text" class="form-control" id="semestre" name="semestre" value="{{alumno.semestre}}"required>
+                        </div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Actualizar
+                            </button>
+                            <a href="{{ url_for('index') }}" class="btn btn-danger">
+                                <i class="fas fa-times"></i> Cancelar
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional: Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+    /* Custom styles */
+    body {
+        background-color: #f8f9fa;
+    }
+    .card {
+        border-radius: 10px;
+    }
+    .card-header {
+        border-radius: 10px 10px 0 0;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+</style>
+
+
+
+{% endblock %}
